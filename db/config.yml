@@ -1,3 +1,6 @@
-DB_SCHEMA: 'schema.sql'
-DB_FILE:   '../data/patsy.db'
-PATTERNS:  ['foo', 'bar']
+DB_SCHEMA:  'schema.sql'
+DB_FILE:    '../data/patsy.db'
+PATTERNS:   ['^Archive(\d{3})_(\d{4})-(\d{2})-(\d{2})_pythonscript.csv$',
+             '^Archive(\d{3})_(\d{4})-(\d{2})-(\d{2})_DPI[d|D]etails.txt$'
+            ]
+SOURCE_DATA: '../data/batches.tar.gz'

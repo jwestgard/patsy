@@ -6,7 +6,7 @@ from flask_bootstrap import Bootstrap
 import sqlite3
 from flask import g
 
-DATABASE = 'db/patsy.sqlite'
+DATABASE = 'data/patsy.db'
 app = Flask(__name__)
 manager = Manager(app)
 bootstrap = Bootstrap(app)
