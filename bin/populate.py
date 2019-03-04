@@ -13,15 +13,15 @@ INFILE =  sys.argv[1]
 OUTFILE = sys.argv[2]
 
 class Asset:
-    def __init__(self, Directory, Filename, Extension, Bytes, MTime, 
-                 Moddate, MD5):
-        self.dir     = Directory
-        self.name    = Filename
-        self.ext     = Extension
-        self.bytes   = Bytes
-        self.mtime   = MTime
-        self.moddate = Moddate
-        self.md5     = MD5
+    def __init__(self, **kwargs):
+        vals = {k.lower(): v for (k, v) in kwargs.items()}
+        self.dir     = vals.setdefault('directory')
+        self.name    = vals.setdefault('filename')
+        self.ext     = vals.setdefault('extension')
+        self.bytes   = vals.setdefault('bytes')
+        self.mtime   = vals.setdefault('mtime')
+        self.moddate = vals.setdefault('moddate')
+        self.md5     = vals.setdefault('md5')
 
 conn = sqlite3.connect(OUTFILE)
 cursor = conn.cursor()
